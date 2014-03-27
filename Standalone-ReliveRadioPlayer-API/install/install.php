@@ -7,7 +7,7 @@
 */
 
 # Install Pfad des gesammten Packetes (URL)
-$setup_url = "http://cm.wikibyte.org/testcodes/neu-chapters";
+$setup_url = "http://liveplayer.reliveradio.de/standalone-live-playerapi";
 
 
 # Standrad Listenanzahl festelegen
@@ -15,7 +15,7 @@ $anzahl = 5;  											//Standard ist: 5
 
 
 # Callbacks für JS in /ms 
-$setup_ms_callback = 8999; 								//Standard ist: 60999
+$setup_ms_callback = 60999; #60999; 					//Standard ist: 60999
 
 
 # Anzahl der Textausgabe: (max 29 Wörter)

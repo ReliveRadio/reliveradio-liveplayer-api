@@ -77,7 +77,7 @@ if (isset($_GET["stream"]) && !empty($_GET["stream"])) {
 		if (isset($_GET["liste"]) && !empty($_GET["liste"])) { 
 			$zahl_liste = $_GET["liste"]; 
 		} else {
-			$zahl_liste = $anzahl;  					#standrad Listenanzahl
+			$zahl_liste = $anzahl; //standard Listenanzahl
 		}
 		######### List API #############
 
@@ -179,8 +179,8 @@ $timestamp = time();
 $anzahlouts = ($zahl_liste -1);
 ?>
 </head>
-<body>
-<p>
+<body style="margin:0px; padding:0px;">
+
 <?php
 ############################################# //Start - Audio #############################################
 echo '<audio id="testplayer">';
@@ -193,13 +193,17 @@ echo "$('#testplayer').podlovewebplayer({ \n";
 echo "poster: './podlove-web-player/img/rr-logo.png', \n"; //Logo ab v#2.1.5
 echo "title: 'Relive Radio - ".$names. "', \n";
 echo "permalink: '".$urilink."', \n";
-echo "subtitle: '<b><a href=\"http://reliveradio.de\">ReliveRadio</a>: </b> sendet rund um die Uhr Podcastformate aus ganz verschiedenen Themenbereichen...', \n";
+echo "subtitle: '<b><a style=\"color: #fff;\" target=\"_blank\" href=\"http://reliveradio.de\">ReliveRadio</a>: </b> sendet rund um die Uhr Podcastformate aus ganz verschiedenen Themenbereichen...', \n";
 #startepisode (läuft gerade)
 echo "chapters: [ \n";
-  echo " {'start':'00:00:00.000','title':'". preg_replace("/(')+/","&rsquo;",$suche["live_episode"]["db"]["name"]). " - ". preg_replace("/(')+/","&rsquo;",$suche["live_episode"]["track_title"]) ."', 'image':'http://static.reliveradio.de/logos/". $suche["live_episode"]["db"]["slugintern"]. ".jpg'} \n";
+  echo " {'start':'00:00:00.000','title':'". preg_replace("/(')+/","&rsquo;",$suche["live_episode"]["db"]["name"]). " - ". preg_replace("/(')+/","&rsquo;",$suche["live_episode"]["track_title"]) ."', 'image':'http://static.reliveradio.de/logos/". $suche["live_episode"]["db"]["slugintern"]. ".jpg', 'href':'". $suche["live_episode"]["db"]["url"] ."'} \n";
 #weitere Episoden
 for($i = 0; $i < $anzahlouts; ++$i) { 
-  echo ",{'start':'". date("H:i:s", (strtotime(substr($suche["upcoming_episodes"][$i]["starts"], 11,-6))-strtotime($server))) ."','title':'". preg_replace("/(')+/","&rsquo;",$suche["upcoming_episodes"][$i]["db"]["name"]) ." - ". preg_replace("/(')+/","&rsquo;",$suche["upcoming_episodes"][$i]["track_title"]). "', 'image':'http://static.reliveradio.de/logos/".$suche["upcoming_episodes"][$i]["db"]["slugintern"]. ".jpg'} \n"; 
+	if($suche["upcoming_episodes"][0]["starts"]) {
+  		echo ",{'start':'". date("H:i:s", (strtotime(substr($suche["upcoming_episodes"][$i]["starts"], 11,-6))-strtotime($server))) ."','title':'". preg_replace("/(')+/","&rsquo;",$suche["upcoming_episodes"][$i]["db"]["name"]) ." - ". preg_replace("/(')+/","&rsquo;",$suche["upcoming_episodes"][$i]["track_title"]). "', 'image':'http://static.reliveradio.de/logos/".$suche["upcoming_episodes"][$i]["db"]["slugintern"]. ".jpg', 'href':'".$suche["upcoming_episodes"][$i]["db"]["url"]."'} \n"; 
+	} else {
+	#	echo "";
+	}
 } 
 echo "], \n";					
 echo "duration: '24:00:00',  \n";
@@ -211,6 +215,6 @@ echo "chaptersVisible: true \n";
 echo "}); \n";
 echo "</script>\n";
 ?>
-</p>
+
 </body>
 </html>

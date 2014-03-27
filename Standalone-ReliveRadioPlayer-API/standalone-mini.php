@@ -135,7 +135,7 @@ if (isset($_GET["color"]) && !empty($_GET["color"])) {
 */
 ?>
 </head>
-<body>
+<body style="margin:0px; padding:0px;">
 <p>
 <?php
 

@@ -18,7 +18,7 @@ reliveradio-liveplayer-api
 * @info: Aufbau und veränderter Podlove Standalone WebPlayer mit eigenen IDs, 
 *        auslesen der ReLive-Json List, Ajax Callbacks über JsonP, Einbau der RPSA & RPCA APIs
 * @developer: <a style="color: #08C;" href="https://flattr.com/profile/mccouman">Michael McCouman jr.</a>
-* @version: 0.1.0 - 2.1.10rc RSWP
+* @version: 0.1.0 - 2.1.11rc RSWP
 */</pre>
 
 Name: <a style="color: #08C;" href="http://reliveradio.de/">ReliveRadio</a> Livestream Webplayer
