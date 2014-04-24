@@ -1,4 +1,16 @@
 <?php
+
+/**
+ *  MIX Incluser 
+ * @info Version 2.10 
+ * @js underprage
+ * 
+ * */
+ 
+ //Mixing abfrage für JavaScript 
+ if (isset($_GET['mix']== 'on'){
+ 
+ 
 #####################################################################################################################
 	
 	//list API
@@ -44,3 +56,14 @@ setInterval( function jsonps(){
   var relivetitlettajax = document.createElement("script"); relivetitlettajax.setAttribute("src", url); relivetitlettajax.setAttribute("type", "text/javascript"); document.getElementsByTagName("head")[0].appendChild(relivetitlettajax);
 }, <?php echo $setup_ms_callback; ?>);
 function relivetitlenamedata(data) { document.getElementById("ReLiveTitle").innerHTML = data; }
+
+
+/**
+*
+*	END TRANS.
+*
+*/
+
+} <!-- end mix --> 
+
+
