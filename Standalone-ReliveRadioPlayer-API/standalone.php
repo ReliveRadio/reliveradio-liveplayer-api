@@ -87,14 +87,14 @@ if (isset($_GET["stream"]) && !empty($_GET["stream"])) {
 			$jsonfile = file_get_contents('http://reliveradio.de/stream/mix.json');
 			$names = "Mix";
 			$urilink = "http://reliveradio.de/stream/mix";
-			echo '<script src="'.$setup_url.'/js-mix.php?anzahl='.$zahl_liste.'"></script>'; 
+			echo '<script src="'.$setup_url.'/js-mix.php?anzahl='.$zahl_liste.'&mix=on"></script>'; 
 		}
 		elseif ($stream == 'mix-mobile'){ 
 			$uristream = "http://stream.reliveradio.de:8000/24mobile.mp3"; 
 			$jsonfile = file_get_contents('http://reliveradio.de/stream/mix.json');
 			$names = "Mix";
 			$urilink = "http://reliveradio.de/stream/mix";
-			echo '<script src="'.$setup_url.'/js-mix.php?anzahl='.$zahl_liste.'"></script>'; 
+			echo '<script src="'.$setup_url.'/js-mix.php?anzahl='.$zahl_liste.'&mix=on"></script>'; 
 		}			 
 		
 		## Technik Stream				 
@@ -103,14 +103,14 @@ if (isset($_GET["stream"]) && !empty($_GET["stream"])) {
 			$jsonfile = file_get_contents('http://reliveradio.de/stream/technik.json');
 			$names = "Technik";
 			$urilink = "http://reliveradio.de/stream/technik";
-			echo '<script src="'.$setup_url.'/js-technik.php?anzahl='.$zahl_liste.'"></script>'; 
+			echo '<script src="'.$setup_url.'/js-technik.php?anzahl='.$zahl_liste.'&technik=on"></script>'; 
 		}			 
 		elseif ($stream == 'technik-mobile'){ 
 			$uristream = "http://stream.reliveradio.de:8000/technikmobile.mp3"; 
 			$jsonfile = file_get_contents('http://reliveradio.de/stream/technik.json');
 			$names = "Technik";
 			$urilink = "http://reliveradio.de/stream/technik";
-			echo '<script src="'.$setup_url.'/js-technik.php?anzahl='.$zahl_liste.'"></script>'; 
+			echo '<script src="'.$setup_url.'/js-technik.php?anzahl='.$zahl_liste.'&technik=on"></script>'; 
 		}			 
 		
 		## Kultur Stream				 
@@ -119,14 +119,14 @@ if (isset($_GET["stream"]) && !empty($_GET["stream"])) {
 			$jsonfile = file_get_contents('http://reliveradio.de/stream/kultur.json');
 			$names = "Kultur";
 			$urilink = "http://reliveradio.de/stream/kultur";
-			echo '<script src="'.$setup_url.'/js-kultur.php?anzahl='.$zahl_liste.'"></script>'; 
+			echo '<script src="'.$setup_url.'/js-kultur.php?anzahl='.$zahl_liste.'&kultur=on"></script>'; 
 		}			 
 		elseif ($stream == 'kultur-mobile'){ 
 			$uristream = "http://stream.reliveradio.de:8000/kulturmobile.mp3";
 			$jsonfile = file_get_contents('http://reliveradio.de/stream/kultur.json');
 			$names = "Kultur";
 			$urilink = "http://reliveradio.de/stream/kultur";
-			echo '<script src="'.$setup_url.'/js-kultur.php?anzahl='.$zahl_liste.'"></script>'; 
+			echo '<script src="'.$setup_url.'/js-kultur.php?anzahl='.$zahl_liste.'&kultur=on"></script>'; 
 		}			 
 		
 		## No Stream API für Shortcode später!
