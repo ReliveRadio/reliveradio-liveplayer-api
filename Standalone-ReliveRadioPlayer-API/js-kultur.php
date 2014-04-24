@@ -1,4 +1,9 @@
 <?php
+
+//Test the new callbacks
+ if (isset($_GET['technik']== 'on'){
+ 
+
 #####################################################################################################################
 	
 	//list API
@@ -22,3 +27,4 @@ setInterval( function jsonp(){ var scripts = document.getElementsByTagName("scri
 setInterval( function jsonps(){ var relivecover = document.getElementsByTagName("script"); for (i=0; i<relivecover.length; i++) { var url = relivecover[i].getAttribute("src"); if(!url) continue; if(url.indexOf("relivecoverdata")>=0) { relivecover[i].parentNode.removeChild(relivecover[i]); } } var relivecoverurl = new Date(); url = "<?php echo $js_ajax_link_kul; ?>?time="+relivecoverurl.getTime()+"&relivecoverdata=relivecoverdata"; var relivecoverajax = document.createElement("script"); relivecoverajax.setAttribute("src", url); relivecoverajax.setAttribute("type", "text/javascript"); document.getElementsByTagName("head")[0].appendChild(relivecoverajax); }, <?php echo $setup_ms_callback; ?>); function relivecoverdata(data) {  document.getElementById("ReLiveCover").innerHTML = data; }
 setInterval( function jsonps(){ var relivetitle = document.getElementsByTagName("script"); for (i=0; i<relivetitle.length; i++) { var url = relivetitle[i].getAttribute("src"); if(!url) continue; if(url.indexOf("relivetitlenamedata")>=0) { relivetitle[i].parentNode.removeChild(relivetitle[i]); } } var relivetitletturl = new Date(); url = "<?php echo $js_ajax_link_kul; ?>?time="+relivetitletturl.getTime()+"&relivetitlenamedata=relivetitlenamedata"; var relivetitlettajax = document.createElement("script"); relivetitlettajax.setAttribute("src", url); relivetitlettajax.setAttribute("type", "text/javascript"); document.getElementsByTagName("head")[0].appendChild(relivetitlettajax);}, <?php echo $setup_ms_callback; ?>); function relivetitlenamedata(data) {  document.getElementById("ReLiveTitle").innerHTML = data; }
 
+}
