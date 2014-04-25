@@ -1,6 +1,6 @@
 <?php
 /**
- *  MIX Incluser 
+ *  Kultur Incluser 
  * @info Version 2.10 
  * @js underprage
  * 
